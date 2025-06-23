@@ -1,5 +1,4 @@
 import { chakra } from '@chakra-ui/react';
-import React from 'react';
 
 import type { TimeFormat } from 'types/settings';
 
@@ -18,8 +17,14 @@ type Props = {
   timeFormat?: TimeFormat;
 };
 
-const TimeWithTooltip = ({ timestamp, fallbackText, isLoading, enableIncrement, className, timeFormat: timeFormatProp }: Props) => {
-
+const TimeWithTooltip = ({
+  timestamp,
+  fallbackText,
+  isLoading,
+  enableIncrement,
+  className,
+  timeFormat: timeFormatProp,
+}: Props) => {
   const settings = useSettingsContext();
   const timeFormat = timeFormatProp || settings?.timeFormat || 'relative';
   const timeAgo = useTimeAgoIncrement(timestamp || '', enableIncrement && !isLoading && timeFormat === 'relative');
@@ -28,33 +33,37 @@ const TimeWithTooltip = ({ timestamp, fallbackText, isLoading, enableIncrement, 
     return null;
   }
 
-  // const content = (() => {
-  //   if (!timestamp) {
-  //     return fallbackText;
-  //   }
-
-  //   if (timeFormat === 'relative') {
-  //     return <Tooltip content={ dayjs(timestamp).format('llll') }><span>{ timeAgo }</span></Tooltip>;
-  //   }
-
-  //   return <Tooltip content={ timeAgo }><span>{ dayjs(timestamp).format('lll') }</span></Tooltip>;
-  // })();
-
   const content = (() => {
     if (!timestamp) {
       return fallbackText;
     }
 
     const date = dayjs(timestamp);
+
+    // Check if the date is valid before attempting to format
     if (!date.isValid()) {
       return fallbackText || 'Invalid date';
     }
 
-    if (timeFormat === 'relative') {
-      return <Tooltip content={ date.format('llll') }><span>{ timeAgo }</span></Tooltip>;
-    }
+    try {
+      if (timeFormat === 'relative') {
+        const formattedDate = date.format('llll');
+        return (
+          <Tooltip content={ formattedDate }>
+            <span>{ timeAgo }</span>
+          </Tooltip>
+        );
+      }
 
-    return <Tooltip content={ timeAgo }><span>{ date.format('lll') }</span></Tooltip>;
+      const formattedDate = date.format('lll');
+      return (
+        <Tooltip content={ timeAgo }>
+          <span>{ formattedDate }</span>
+        </Tooltip>
+      );
+    } catch (error) {
+      return fallbackText || 'Invalid date';
+    }
   })();
 
   return (
