@@ -28,16 +28,33 @@ const TimeWithTooltip = ({ timestamp, fallbackText, isLoading, enableIncrement, 
     return null;
   }
 
+  // const content = (() => {
+  //   if (!timestamp) {
+  //     return fallbackText;
+  //   }
+
+  //   if (timeFormat === 'relative') {
+  //     return <Tooltip content={ dayjs(timestamp).format('llll') }><span>{ timeAgo }</span></Tooltip>;
+  //   }
+
+  //   return <Tooltip content={ timeAgo }><span>{ dayjs(timestamp).format('lll') }</span></Tooltip>;
+  // })();
+
   const content = (() => {
     if (!timestamp) {
       return fallbackText;
     }
 
-    if (timeFormat === 'relative') {
-      return <Tooltip content={ dayjs(timestamp).format('llll') }><span>{ timeAgo }</span></Tooltip>;
+    const date = dayjs(timestamp);
+    if (!date.isValid()) {
+      return fallbackText || 'Invalid date';
     }
 
-    return <Tooltip content={ timeAgo }><span>{ dayjs(timestamp).format('lll') }</span></Tooltip>;
+    if (timeFormat === 'relative') {
+      return <Tooltip content={ date.format('llll') }><span>{ timeAgo }</span></Tooltip>;
+    }
+
+    return <Tooltip content={ timeAgo }><span>{ date.format('lll') }</span></Tooltip>;
   })();
 
   return (
