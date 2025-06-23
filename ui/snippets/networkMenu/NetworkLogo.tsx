@@ -7,8 +7,8 @@ import config from 'configs/app';
 import { useColorModeValue } from 'toolkit/chakra/color-mode';
 import { Image } from 'toolkit/chakra/image';
 import IconSvg from 'ui/shared/IconSvg';
-import logoSTC from "../../../icons/logostc.svg"
 
+import logoSTC from '../../../icons/logostc.svg';
 
 interface Props {
   isCollapsed?: boolean;
@@ -42,13 +42,13 @@ const LogoFallback = ({ isCollapsed, isSmall }: { isCollapsed?: boolean; isSmall
 const INVERT_FILTER = 'brightness(0) invert(1)';
 
 const NetworkLogo = ({ isCollapsed, onClick, className }: Props) => {
- 
+
   const logoSrc = useColorModeValue(config.UI.navigation.logo.default, config.UI.navigation.logo.dark || config.UI.navigation.logo.default);
   const iconSrc = useColorModeValue(config.UI.navigation.icon.default, config.UI.navigation.icon.dark || config.UI.navigation.icon.default);
 
   return (
     <div>
-      <img width="100" height="100" src="https://pouch.jumpshare.com/preview/5eu6lsB_6Ubf962W7SyFPIAuThugCf8V9MpHU1hM6E293AMGFh03ho-sKlbZifk_AawBoIRaYSrtruO_hjplP6mkw7L6Q-OzDV3jw3eJO7I" alt="Network Logo" />
+      <img width="100" height="100" src="https://pouch.jumpshare.com/preview/5eu6lsB_6Ubf962W7SyFPIAuThugCf8V9MpHU1hM6E293AMGFh03ho-sKlbZifk_AawBoIRaYSrtruO_hjplP6mkw7L6Q-OzDV3jw3eJO7I" alt="Network Logo"/>
     </div>
     // <chakra.a
     //   className={ className }

@@ -1,23 +1,20 @@
-import { Table as ChakraTable, Icon } from '@chakra-ui/react';
+import { Table as ChakraTable, Icon, createIcon } from '@chakra-ui/react';
 import { throttle } from 'es-toolkit';
 import * as React from 'react';
-
-import { createIcon } from "@chakra-ui/react"
-
 
 // import ArrowIcon from 'icons/arrows/east.svg';
 
 const ArrowIcon = createIcon({
-  displayName: "ArrowIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'ArrowIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g fill="currentColor">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <polyline points="15,3 21,3 21,9" />
-      <line x1="10" y1="14" x2="21" y2="3" />
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15,3 21,3 21,9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
     </g>
   ),
-})
+});
 
 import { Link } from './link';
 

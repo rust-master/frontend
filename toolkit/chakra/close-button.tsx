@@ -1,5 +1,5 @@
-import type { ButtonProps } from '@chakra-ui/react';
-import { Icon, useRecipe } from '@chakra-ui/react';
+import type { ButtonProps, IconButtonProps } from '@chakra-ui/react';
+import { Icon, useRecipe, createIcon } from '@chakra-ui/react';
 import * as React from 'react';
 
 // import CloseIcon from 'icons/close.svg';
@@ -7,26 +7,22 @@ import * as React from 'react';
 import { recipe as closeButtonRecipe } from '../theme/recipes/close-button.recipe';
 import { IconButton } from './icon-button';
 
-import { createIcon } from "@chakra-ui/react"
-import type { IconButtonProps } from "@chakra-ui/react"
-
 // Create a custom close icon using createIcon
 const CloseIcon = createIcon({
-  displayName: "CloseIcon",
-  viewBox: "0 0 24 24",
+  displayName: 'CloseIcon',
+  viewBox: '0 0 24 24',
   path: (
     <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <path d="M18 6L6 18" />
-      <path d="M6 6l12 12" />
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
     </g>
   ),
-})
+});
 
 export interface CloseButtonProps extends Omit<ButtonProps, 'variant' | 'size'> {
   variant?: 'plain';
   size?: 'md';
 }
-
 
 export const CloseButton = React.forwardRef<
   HTMLButtonElement,
