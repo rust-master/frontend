@@ -27,7 +27,7 @@ const NavigationDesktop = () => {
         maxW={ `${ CONTENT_MAX_WIDTH }px` }
         m="0 auto"
       >
-        <NetworkLogo isCollapsed={ false } w={{ lg: '100%' }} maxW="120px"/>
+        <NetworkLogo isCollapsed={ false } w={{ lg: '100%' }} maxW="120px" />
         <TestnetBadge ml={ 3 }/>
         <RollupStageBadge ml={ 3 }/>
         <chakra.nav ml="auto" mr={ config.features.account.isEnabled || config.features.blockchainInteraction.isEnabled ? 8 : 0 }>

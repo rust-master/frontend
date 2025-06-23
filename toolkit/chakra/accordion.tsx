@@ -1,7 +1,20 @@
 import { Accordion, Icon } from '@chakra-ui/react';
 import * as React from 'react';
+import { createIcon } from "@chakra-ui/react"
 
-import IndicatorIcon from 'icons/arrows/east-mini.svg';
+
+// import IndicatorIcon from 'icons/arrows/east-mini.svg';
+
+const IndicatorIcon = createIcon({
+  displayName: "IndicatorIcon",
+  viewBox: "0 0 24 24",
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18" />
+      <path d="M6 6l12 12" />
+    </g>
+  ),
+})
 
 interface AccordionItemTriggerProps extends Accordion.ItemTriggerProps {
   indicatorPlacement?: 'start' | 'end';

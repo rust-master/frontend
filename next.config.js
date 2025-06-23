@@ -18,18 +18,33 @@ const moduleExports = {
     'swagger-ui-react',
   ],
   reactStrictMode: true,
-  webpack(config) {
-    config.module.rules.push(
-      {
-        test: /\.svg$/,
-        use: [ '@svgr/webpack' ],
-      },
+  webpack(config, options) {
+    // Remove the existing SVG rule if present
+    config.module.rules = config.module.rules.filter(
+      rule => !(rule.test && rule.test.toString().includes('svg'))
     );
+  
+    // Add new SVGR rule
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            icon: true,
+          },
+        },
+      ],
+    });
+  
+    // Fallbacks and externals
     config.resolve.fallback = { fs: false, net: false, tls: false };
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
-
+  
     return config;
   },
+  
   // NOTE: all config functions should be static and not depend on any environment variables
   // since all variables will be passed to the app only at runtime and there is now way to change Next.js config at this time
   // if you are stuck and strongly believe what you need some sort of flexibility here please fill free to join the discussion

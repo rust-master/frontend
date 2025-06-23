@@ -55,12 +55,12 @@ const defaultColorTheme = (() => {
 const UI = Object.freeze({
   navigation: {
     logo: {
-      'default': getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_LOGO'),
-      dark: getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_LOGO_DARK'),
+      'default': getExternalAssetFilePath('https://pouch.jumpshare.com/preview/TBobd3qkpYlNEI3kFERF5HcVH1yizkqgUIE3dA2DnCJ_WdB9-9bANq_Fm-w1Kiy3uXlTNfjhw6LYJRnJjaBHd9dFEa_ozXvY8DSKJbAUqC0'),
+      dark: getExternalAssetFilePath('https://pouch.jumpshare.com/preview/TBobd3qkpYlNEI3kFERF5HcVH1yizkqgUIE3dA2DnCJ_WdB9-9bANq_Fm-w1Kiy3uXlTNfjhw6LYJRnJjaBHd9dFEa_ozXvY8DSKJbAUqC0'),
     },
     icon: {
-      'default': getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_ICON'),
-      dark: getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_ICON_DARK'),
+      'default': getExternalAssetFilePath('https://pouch.jumpshare.com/preview/TBobd3qkpYlNEI3kFERF5HcVH1yizkqgUIE3dA2DnCJ_WdB9-9bANq_Fm-w1Kiy3uXlTNfjhw6LYJRnJjaBHd9dFEa_ozXvY8DSKJbAUqC0'),
+      dark: getExternalAssetFilePath('https://pouch.jumpshare.com/preview/TBobd3qkpYlNEI3kFERF5HcVH1yizkqgUIE3dA2DnCJ_WdB9-9bANq_Fm-w1Kiy3uXlTNfjhw6LYJRnJjaBHd9dFEa_ozXvY8DSKJbAUqC0'),
     },
     hiddenLinks,
     highlightedRoutes,

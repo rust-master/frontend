@@ -4,9 +4,34 @@ import type { ListCollection } from '@chakra-ui/react';
 import { Box, Select as ChakraSelect, createListCollection, Flex, Portal, Icon, useSelectContext } from '@chakra-ui/react';
 import { useDebounce } from '@uidotdev/usehooks';
 import * as React from 'react';
+import { createIcon } from "@chakra-ui/react"
 
-import ArrowIcon from 'icons/arrows/east-mini.svg';
-import CheckIcon from 'icons/check.svg';
+
+// import ArrowIcon from 'icons/arrows/east-mini.svg';
+// import CheckIcon from 'icons/check.svg';
+
+const ArrowIcon = createIcon({
+  displayName: "ArrowIcon",
+  viewBox: "0 0 24 24",
+  path: (
+    <g fill="currentColor">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15,3 21,3 21,9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </g>
+  ),
+})
+
+const CheckIcon = createIcon({
+  displayName: "CheckIcon",
+  viewBox: "0 0 24 24",
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18" />
+      <path d="M6 6l12 12" />
+    </g>
+  ),
+})
 
 import { FilterInput } from '../components/filters/FilterInput';
 import { CloseButton } from './close-button';
