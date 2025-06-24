@@ -1,10 +1,54 @@
-import { Box, Flex, Icon, Text, chakra } from '@chakra-ui/react';
+import { Box, Flex, Icon, Text, chakra, createIcon } from '@chakra-ui/react';
 import React from 'react';
 
-import JsonFileIcon from 'icons/files/json.svg';
-import PlaceholderFileIcon from 'icons/files/placeholder.svg';
-import SolFileIcon from 'icons/files/sol.svg';
-import YulFileIcon from 'icons/files/yul.svg';
+// import JsonFileIcon from 'icons/files/json.svg';
+// import PlaceholderFileIcon from 'icons/files/placeholder.svg';
+// import SolFileIcon from 'icons/files/sol.svg';
+// import YulFileIcon from 'icons/files/yul.svg';
+
+const JsonFileIcon = createIcon({
+  displayName: 'JsonFileIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
+
+const PlaceholderFileIcon = createIcon({
+  displayName: 'PlaceholderFileIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
+
+const SolFileIcon = createIcon({
+  displayName: 'SolFileIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
+
+const YulFileIcon = createIcon({
+  displayName: 'YulFileIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 import { CloseButton } from '../../../../chakra/close-button';
 import { Hint } from '../../../../components/Hint/Hint';

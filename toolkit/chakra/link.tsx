@@ -1,12 +1,23 @@
 import type { LinkProps as ChakraLinkProps } from '@chakra-ui/react';
-import { Link as ChakraLink, LinkBox as ChakraLinkBox, LinkOverlay as ChakraLinkOverlay, Icon } from '@chakra-ui/react';
+import { Link as ChakraLink, LinkBox as ChakraLinkBox, LinkOverlay as ChakraLinkOverlay, Icon, createIcon } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import type { LinkProps as NextLinkProps } from 'next/link';
 import React from 'react';
 
-import ArrowIcon from 'icons/link_external.svg';
+// import ArrowIcon from 'icons/link_external.svg';
 
 import { Skeleton } from './skeleton';
+
+const ArrowIcon = createIcon({
+  displayName: 'IndicatorIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 export const LinkExternalIcon = ({ color }: { color?: ChakraLinkProps['color'] }) => (
   <Icon

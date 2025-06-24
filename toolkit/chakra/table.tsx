@@ -1,10 +1,21 @@
-import { Table as ChakraTable, Icon } from '@chakra-ui/react';
+import { Table as ChakraTable, Icon, createIcon } from '@chakra-ui/react';
 import { throttle } from 'es-toolkit';
 import * as React from 'react';
 
-import ArrowIcon from 'icons/arrows/east.svg';
+// import ArrowIcon from 'icons/arrows/east.svg';
 
 import { Link } from './link';
+
+const ArrowIcon = createIcon({
+  displayName: 'IndicatorIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 export const TableRoot = ChakraTable.Root;
 export const TableBody = ChakraTable.Body;

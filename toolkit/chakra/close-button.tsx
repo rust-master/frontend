@@ -1,8 +1,19 @@
 import type { ButtonProps } from '@chakra-ui/react';
-import { Icon, useRecipe } from '@chakra-ui/react';
+import { Icon, useRecipe, createIcon } from '@chakra-ui/react';
 import * as React from 'react';
 
-import CloseIcon from 'icons/close.svg';
+// import CloseIcon from 'icons/close.svg';
+
+const CloseIcon = createIcon({
+  displayName: 'CloseIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 import { recipe as closeButtonRecipe } from '../theme/recipes/close-button.recipe';
 import { IconButton } from './icon-button';

@@ -1,12 +1,34 @@
 'use client';
 
 import type { ListCollection } from '@chakra-ui/react';
-import { Box, Select as ChakraSelect, createListCollection, Flex, Portal, Icon, useSelectContext } from '@chakra-ui/react';
+import { Box, Select as ChakraSelect, createListCollection, Flex, Portal, Icon, useSelectContext, createIcon } from '@chakra-ui/react';
 import { useDebounce } from '@uidotdev/usehooks';
 import * as React from 'react';
 
-import ArrowIcon from 'icons/arrows/east-mini.svg';
-import CheckIcon from 'icons/check.svg';
+// import ArrowIcon from 'icons/arrows/east-mini.svg';
+// import CheckIcon from 'icons/check.svg';
+
+const ArrowIcon = createIcon({
+  displayName: 'ArrowIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
+
+const CheckIcon = createIcon({
+  displayName: 'CheckIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 import { FilterInput } from '../components/filters/FilterInput';
 import { CloseButton } from './close-button';

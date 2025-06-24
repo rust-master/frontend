@@ -1,9 +1,20 @@
-import { Icon } from '@chakra-ui/react';
+import { Icon, createIcon } from '@chakra-ui/react';
 import React from 'react';
 
 import type { TabItem } from './types';
 
-import DotsIcon from 'icons/dots.svg';
+// import DotsIcon from 'icons/dots.svg';
+
+const DotsIcon = createIcon({
+  displayName: 'DotsIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 import { IconButton } from '../../chakra/icon-button';
 import type { IconButtonProps } from '../../chakra/icon-button';

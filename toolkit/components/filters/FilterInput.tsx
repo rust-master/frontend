@@ -1,8 +1,19 @@
-import { Icon } from '@chakra-ui/react';
+import { Icon, createIcon } from '@chakra-ui/react';
 import type { ChangeEvent } from 'react';
 import React, { useCallback, useState } from 'react';
 
-import SearchIcon from 'icons/search.svg';
+// import SearchIcon from 'icons/search.svg';
+
+const SearchIcon = createIcon({
+  displayName: 'SearchIcon',
+  viewBox: '0 0 24 24',
+  path: (
+    <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <path d="M18 6L6 18"/>
+      <path d="M6 6l12 12"/>
+    </g>
+  ),
+});
 
 import type { InputProps } from '../../chakra/input';
 import { Input } from '../../chakra/input';
